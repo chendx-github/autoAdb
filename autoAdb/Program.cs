@@ -88,7 +88,7 @@ while (true)
                 触发(dev1);
             }
         }
-    }, $@"cd /d {Path.GetDirectoryName(@"D:\sof\adb\adb.exe")}");
+    });
     auto1.WaitOne();
     auto1.Reset();
     Thread.Sleep(1500);

@@ -9,7 +9,7 @@ namespace autoAdb
 {
     public class cmdHelp
     {
-        public static Process cmdPorcess(string cmd_str, Action<object, DataReceivedEventArgs> outAction, string cd_str = "")
+        public static Process cmdPorcess(string cmd_str, Action<object, DataReceivedEventArgs> outAction)
         {
             Process process = new Process();
             process.StartInfo.FileName = @"cmd";
@@ -26,7 +26,6 @@ namespace autoAdb
             process.BeginErrorReadLine();
             Task.Run(() =>
             {
-                process.StandardInput.WriteLine(cd_str);
                 process.StandardInput.WriteLine(cmd_str);
                 process.StandardInput.WriteLine("exit");
             });
