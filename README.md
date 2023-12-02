@@ -14,6 +14,8 @@ config.txt
 
 // 127.0.0.1:5555 这个设备连接的时候执行cmd
 127.0.0.1:5555 cmd
+
+
 // 有设备连接的时候将设备的名字写入到 d:/log.log 文件中
 any echo %name%>>d:/log.log
 
