@@ -21,8 +21,9 @@ void 触发(string dev1)
         if (strings[0] == dev1 || strings[0] == "any")
         {
             Process process = new Process();
-            process.StartInfo.FileName = strings[1];
-            process.StartInfo.Arguments = string.Join(' ', strings[2..(strings.Length)]);
+            process.StartInfo.FileName = strings[2];
+            process.StartInfo.WorkingDirectory = strings[1];
+            process.StartInfo.Arguments = string.Join(' ', strings[3..(strings.Length)]);
             process.Start();
             dev_process1.Add(new dev_process() { dev = dev1, pro1 = process });
         }
@@ -56,6 +57,7 @@ void 断开(string dev1)
     {
         try
         {
+            item.pro1.Kill();
             item.pro1.Close();
         }
         catch (Exception)
