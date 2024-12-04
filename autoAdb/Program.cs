@@ -57,8 +57,9 @@ void 断开(string dev1)
     {
         try
         {
-            item.pro1.Kill();
             item.pro1.Close();
+            item.pro1.Kill();
+            item.pro1.Dispose();
         }
         catch (Exception)
         {
